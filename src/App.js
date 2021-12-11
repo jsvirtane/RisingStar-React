@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react"
+import DateInput from "./components/DateInput"
+import ApiCall from "./services/ApiCall"
+import BearTrend from "./components/BearTrend"
+import FilterService from "./services/FilterService"
+import TopVolume from "./components/TopVolume"
+import OptimalDates from "./components/OptimalDates"
+import Banner from "./components/Banner"
+import ErrorMessage from "./components/ErrorMessage"
+import useToggle from "./hooks/useToggle"
 
-function App() {
+const App = () => {
+  const [apiData, setApiData] = useState([])
+  const [priceData, setPriceData] = useState([])
+  const [volumeData, setVolumeData] = useState([])
+
+  useEffect(() => setPriceData(FilterService(apiData.prices)), [apiData])
+  useEffect(() => setVolumeData(FilterService(apiData.total_volumes)),[apiData])
+
+  const Collapse = useToggle()
+
+  const submitDates = (e, startDate, endDate) => {
+    e.preventDefault()
+    if (startDate >= endDate) {
+      Collapse.toggle()
+    }
+    if (startDate < endDate) {
+      if (Collapse.isOpen === true) {
+        Collapse.toggle()
+      }
+      ApiCall.getData(startDate, endDate).then((data) => setApiData(data))
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-light vh-100'>
+      <Banner />
+      <div className="container">
+        <DateInput submitDates={submitDates} />
+        <ErrorMessage isOpen={Collapse.isOpen} />
+        <div className="row mt-2">
+          <div className="col-md-4">
+            <BearTrend data={priceData} />
+          </div>
+          <div className="col-md-4">
+            <TopVolume data={volumeData} />
+          </div>
+          <div className="col-md-4">
+            <OptimalDates data={priceData} />
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
