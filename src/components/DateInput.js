@@ -12,7 +12,7 @@ const DateInput = ({ submitDates }) => {
         onSubmit={(e) => submitDates(e, startDate.value, endDate.value)}
       >
         <div className="row">
-          <div className="col-5">
+          <div className="col-md-5">
             <label for="startDate">From:</label>
             <input
               type="date"
@@ -22,7 +22,7 @@ const DateInput = ({ submitDates }) => {
               onChange={startDate.onChange}
             ></input>
           </div>
-          <div className="col-5">
+          <div className="col-md-5">
             <label for="endDate">To:</label>
             <input
               type="date"
@@ -32,7 +32,7 @@ const DateInput = ({ submitDates }) => {
               onChange={endDate.onChange}
             ></input>
           </div>
-          <div className="col-2">
+          <div className="col-md-2 col-12">
             <button type="submit" className="btn btn-primary mt-4">
               Confirm dates
             </button>

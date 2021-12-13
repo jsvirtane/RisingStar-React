@@ -42,13 +42,13 @@ const App = () => {
         <DateInput submitDates={submitDates} />
         <ErrorMessage isOpen={Collapse.isOpen} />
         <div className="row mt-2">
-          <div className="col-md-4">
+          <div className="col-md-4 mt-2">
             <BearTrend data={priceData} />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 mt-2">
             <TopVolume data={volumeData} />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 mt-2">
             <OptimalDates data={priceData} />
           </div>
         </div>
