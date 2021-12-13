@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/RisingStar-React/static/js/main.61831e90.chunk.js",
-    "main.js.map": "/RisingStar-React/static/js/main.61831e90.chunk.js.map",
+    "main.js": "/RisingStar-React/static/js/main.e92f28f2.chunk.js",
+    "main.js.map": "/RisingStar-React/static/js/main.e92f28f2.chunk.js.map",
     "runtime-main.js": "/RisingStar-React/static/js/runtime-main.b490c53e.js",
     "runtime-main.js.map": "/RisingStar-React/static/js/runtime-main.b490c53e.js.map",
     "static/css/2.e6c1e8c5.chunk.css": "/RisingStar-React/static/css/2.e6c1e8c5.chunk.css",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.b490c53e.js",
     "static/css/2.e6c1e8c5.chunk.css",
     "static/js/2.c3ba71a9.chunk.js",
-    "static/js/main.61831e90.chunk.js"
+    "static/js/main.e92f28f2.chunk.js"
   ]
 }
