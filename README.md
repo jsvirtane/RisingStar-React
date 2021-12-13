@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Rising Star Pre-assingment
+Project is a pre-assignment for [Vincit Rising Star-program](https://vincit.hire.trakstar.com/jobs/b8f3e8bc4bd54b5da23950e7f222d427). App is made with React and 
+stylized with Bootstrap. 
+
+## Preview
+You can preview the app [here](https://jsvirtane.github.io/RisingStar-React/).
+
+## Other
+If you are interested Python-approached solution, check [here](https://github.com/jsvirtane/RisingStar).
+
+## Author
+© Jami Virtanen
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
