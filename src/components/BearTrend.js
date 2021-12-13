@@ -1,7 +1,6 @@
 import React from "react"
 
 const BearTrend = ({ data }) => {
-
   const calculateBearTrend = () => {
     let bearTrend = 0
     let previous = 0

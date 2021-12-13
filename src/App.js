@@ -15,25 +15,28 @@ const App = () => {
   const [volumeData, setVolumeData] = useState([])
 
   useEffect(() => setPriceData(FilterService(apiData.prices)), [apiData])
-  useEffect(() => setVolumeData(FilterService(apiData.total_volumes)),[apiData])
+  useEffect(() => setVolumeData(FilterService(apiData.total_volumes)), [apiData])
 
   const Collapse = useToggle()
+  const Datafetcher = ApiCall()
 
   const submitDates = (e, startDate, endDate) => {
     e.preventDefault()
     if (startDate >= endDate) {
-      Collapse.toggle()
+      if (Collapse.isOpen !== true) {
+        Collapse.toggle()
+      }
     }
     if (startDate < endDate) {
       if (Collapse.isOpen === true) {
         Collapse.toggle()
       }
-      ApiCall.getData(startDate, endDate).then((data) => setApiData(data))
+      Datafetcher.getData(startDate, endDate).then((data) => setApiData(data))
     }
   }
 
   return (
-    <div className='bg-light vh-100'>
+    <div className="bg-light vh-100">
       <Banner />
       <div className="container">
         <DateInput submitDates={submitDates} />
